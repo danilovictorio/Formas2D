@@ -8,7 +8,47 @@ namespace Formas2D
 {
     class Program
     {
+        static List<Forma> figuras;
         static void Main(string[] args)
+        {
+            Diagrama diagrama = new Diagrama();
+            string respuesta;
+            // Creación de figuras aleatorias
+            for (int i = 0; i < 5; i++)
+            {
+                diagrama.AgregarFormaAleatoria();
+            }
+            
+            CreacionFiguras();
+
+            Console.WriteLine("Resumen de todas las figuras:");
+            foreach (var figura in figuras)
+            {
+                Console.WriteLine(figura);
+            }
+
+            do
+            {
+                Console.Write("¿Quieres ver la lista de figuras generadas? (S/N): ");
+                respuesta = Console.ReadLine().Trim().ToUpper();
+
+                if (respuesta == "S")
+                {
+                    Console.WriteLine("\n→ Lista de figuras:");
+                    Console.WriteLine(diagrama);
+                }
+                else if (respuesta != "N")
+                {
+                    Console.WriteLine("Entrada no válida. Por favor, escribe 'S' o 'N'.");
+                }
+
+            } while (respuesta != "S" && respuesta != "N");
+
+            Console.WriteLine("\nPrograma finalizado. Presiona una tecla para salir...");
+            Console.ReadKey();
+        }
+
+        private static void CreacionFiguras()
         {
             // Instanciando un rectángulo
             Rectangulo rect = new Rectangulo(10, 7);
@@ -20,26 +60,16 @@ namespace Formas2D
             Cuadrado cuadrado = new Cuadrado(10);
 
             // Instanciando una circulo
-            var circulo = new Circulo(3);
+            var circulo = new Circulo(5);
             Console.WriteLine(circulo);
 
-
-            // Puedes guardar todo en una lista si quieres recorrerlas
-            List<Forma> figuras = new List<Forma>
+            figuras = new List<Forma>
             {
                 rect,
                 tri,
                 cuadrado
             };
 
-            Console.WriteLine("\nResumen de todas las figuras:");
-            foreach (var figura in figuras)
-            {
-                Console.WriteLine(figura);
-            }
-
-            Console.WriteLine("\nPresiona una tecla para salir...");
-            Console.ReadKey();
         }
     }
 }
