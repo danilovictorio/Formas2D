@@ -21,7 +21,5 @@ namespace Formas2D
             return $"Cuadrado: Lado = {Lado}, {base.ToString()}";
         }
     }
-    {
-
-    }
+    
 }

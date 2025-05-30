@@ -12,17 +12,19 @@ namespace Formas2D
         {
             // Instanciando un rectángulo
             Rectangulo rect = new Rectangulo(10, 7);
-            Console.WriteLine(rect);
 
             // Instanciando un triángulo
             Triangulo tri = new Triangulo(3, 4, 5);
-            Console.WriteLine(tri);
+
+            //Intanciando un cuadrado
+            Cuadrado cuadrado = new Cuadrado(5);
 
             // Puedes guardar todo en una lista si quieres recorrerlas
             List<Forma> figuras = new List<Forma>
             {
                 rect,
-                tri
+                tri,
+                cuadrado
             };
 
             Console.WriteLine("\nResumen de todas las figuras:");
@@ -31,7 +33,6 @@ namespace Formas2D
                 Console.WriteLine(figura);
             }
 
-            // Pausa al final (útil si corres en consola)
             Console.WriteLine("\nPresiona una tecla para salir...");
             Console.ReadKey();
         }
