@@ -17,7 +17,12 @@ namespace Formas2D
             Triangulo tri = new Triangulo(3, 4, 5);
 
             //Intanciando un cuadrado
-            Cuadrado cuadrado = new Cuadrado(5);
+            Cuadrado cuadrado = new Cuadrado(10);
+
+            // Instanciando una circulo
+            var circulo = new Circulo(3);
+            Console.WriteLine(circulo);
+
 
             // Puedes guardar todo en una lista si quieres recorrerlas
             List<Forma> figuras = new List<Forma>
